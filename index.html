@@ -3,90 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Math Matrix</title>
+    <title>The Commons</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
+            color: #333;
+            background: #f9f9f9;
         }
         header {
-            background-color: #153dc2;
+            background-color: #f44336; /* Adjust the color to match your branding */
             color: white;
-            padding: 1rem 0;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 10px;
+            padding: 20px;
+            flex-basis: 30%; /* Adjusts the size of the cards */
             text-align: center;
         }
-        nav {
-            background: #333;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-        }
-        main {
-            margin: 2rem;
-        }
-        article {
-            margin-bottom: 2rem;
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        @media (max-width: 800px) {
+            .card {
+                flex-basis: 100%; /* Stacks the cards on smaller screens */
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>The Math Matrix</h1>
-        <p>INSERT</p>
-    </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#articles">Articles</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <main>
-        <section id="home">
-            <h2>Welcome to Math Musings</h2>
-            <p>Your source for insightful articles and engaging discussions on all things math.</p>
-        </section>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>Math Musings is dedicated to fostering a deeper understanding and appreciation of mathematical concepts. Our goal is to make math accessible and enjoyable for everyone.</p>
-        </section>
-        <section id="articles">
-            <h2>Recent Articles</h2>
-            <article>
-                <h3>The Beauty of Algebraic Structures</h3>
-                <p>Discover the elegance and power of algebraic structures in solving complex problems.</p>
-            </article>
-            <article>
-                <h3>Understanding Calculus: A Beginner's Guide</h3>
-                <p>An introductory guide to the fundamental concepts of calculus and their real-world applications.</p>
-            </article>
-            <article>
-                <h3>The Fascinating World of Number Theory</h3>
-                <p>Explore the intriguing patterns and properties of numbers that have captivated mathematicians for centuries.</p>
-            </article>
-        </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Have questions or feedback? Reach out to us at <a href="mailto:contact@mathmusings.com">contact@mathmusings.com</a>.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Zach Abdulrahman. All rights reserved.</p>
-    </footer>
+    <header>The Commons</header>
+    <div class="container">
+        <div class="card">
+            <h3>Belonging in Inclusive Places</h3>
+            <p>2020 University at LambdaSchool</p>
+        </div>
+        <div class="card">
+            <h3>Checklist & Things to do Before Your First Day at Lambda School</h3>
+            <p>Get ready for an exciting start!</p>
+        </div>
+        <div class="card">
+            <h3>An Update on Lambda School in California</h3>
+            <p>Latest developments and plans.</p>
+        </div>
+    </div>
 </body>
+</html>
+
 </html>
