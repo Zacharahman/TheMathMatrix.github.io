@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Commons</title>
+    <title>The Math Matrix</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,6 +32,12 @@
             padding: 20px;
             flex-basis: 30%; /* Adjusts the size of the cards */
             text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+            cursor: pointer; /* Changes the mouse cursor to a pointer */
+        }
+        .card:hover {
+            transform: translateY(-5px); /* Moves the card up slightly */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Enhances the shadow effect */
         }
         @media (max-width: 800px) {
             .card {
@@ -53,10 +59,20 @@
         </div>
         <div class="card">
             <h3>Comp Neuro</h3>
-            <p>what I am working on </p>
+            <p>what I am working on</p>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var cards = document.querySelectorAll('.card');
+            cards.forEach(function(card) {
+                card.addEventListener('click', function() {
+                    alert('Clicked on ' + card.querySelector('h3').innerText);
+                    // For more interactive response you might navigate to a different page or show more details
+                    // window.location.href = 'https://example.com/' + card.querySelector('h3').innerText;
+                });
+            });
+        });
+    </script>
 </body>
-</html>
-
 </html>
