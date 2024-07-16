@@ -24,13 +24,96 @@
             text-align: center;
         }
     </style>
+
 </head>
 <body>
-    <header>The Math Matrix - Comp Neuro</header>
-    <main>
-        <h1>Computational Neuroscience</h1>
-        <p>Exploring the computational aspects of how the brain processes information.</p>
-        <p>[Expand with discussions on recent research, key theories, or models]</p>
-    </main>
+    <div class="container">
+        <h1>Understanding the Generalized Leaky Integrate-and-Fire (GLIF) Model</h1>
+        <p>
+            The Generalized Leaky Integrate-and-Fire (GLIF) model is a fundamental tool in computational neuroscience, used to simulate the electrical activity of neurons. The GLIF model simplifies the complex dynamics of neuronal membranes, allowing researchers to study the behavior of large neuronal networks efficiently.
+        </p>
+        
+        <h2>The Basics of the GLIF Model</h2>
+        <p>
+            At its core, the GLIF model describes the membrane potential of a neuron over time. The membrane potential, \(V(t)\), is governed by a differential equation that incorporates various physiological properties of the neuron, such as the membrane resistance and capacitance.
+        </p>
+        <pre>
+        <code>
+        C_m \frac{dV(t)}{dt} = -\frac{V(t)}{R_m} + I(t)
+        </code>
+        </pre>
+        <p>
+            Here, \(C_m\) is the membrane capacitance, \(R_m\) is the membrane resistance, and \(I(t)\) is the input current to the neuron.
+        </p>
+
+        <h3>Incorporating Synaptic Inputs</h3>
+        <p>
+            Neurons receive inputs from other neurons through synapses. These inputs can be excitatory or inhibitory, affecting the membrane potential accordingly. The synaptic input current can be modeled as:
+        </p>
+        <pre>
+        <code>
+        I(t) = \sum_{i} G_i (V(t) - E_i)
+        </code>
+        </pre>
+        <p>
+            Where \(G_i\) is the conductance of the synapse and \(E_i\) is the reversal potential associated with the synapse.
+        </p>
+
+        <h2>Spike Generation and Reset Mechanism</h2>
+        <p>
+            When the membrane potential reaches a threshold value, \(V_{th}\), the neuron generates a spike (action potential). After the spike, the membrane potential is reset to a specific value, \(V_{reset}\), and the neuron enters a refractory period during which it is less responsive to inputs.
+        </p>
+        <pre>
+        <code>
+        if V(t) \geq V_{th}:
+            V(t) \rightarrow V_{reset}
+            RefractoryPeriod()
+        </code>
+        </pre>
+        
+        <h2>Numerical Methods for Simulation</h2>
+        <p>
+            Simulating the GLIF model requires numerical methods to solve the differential equations. One common approach is the Euler method, which approximates the solution at discrete time steps:
+        </p>
+        <pre>
+        <code>
+        V(t + \Delta t) = V(t) + \Delta t \left( \frac{-V(t)}{R_m C_m} + \frac{I(t)}{C_m} \right)
+        </code>
+        </pre>
+        <p>
+            Here, \(\Delta t\) is the time step size. More advanced methods, such as Runge-Kutta, can also be used for higher accuracy.
+        </p>
+        
+        <h2>Applications of the GLIF Model</h2>
+        <p>
+            The GLIF model is widely used in neuroscience research for various applications:
+        </p>
+        <ul>
+            <li><strong>Neuronal Network Simulations:</strong> Studying the dynamics of large networks of neurons to understand information processing in the brain.</li>
+            <li><strong>Sensory Processing:</strong> Modeling how sensory inputs are encoded and processed by neuronal circuits.</li>
+            <li><strong>Learning and Memory:</strong> Investigating the mechanisms underlying learning and memory formation in the brain.</li>
+        </ul>
+
+        <h3>Example: Orientation Selectivity in Visual Cortex</h3>
+        <p>
+            One notable application of the GLIF model is in studying orientation selectivity in the visual cortex. By simulating networks of GLIF neurons, researchers can analyze how the brain discriminates between different orientations of visual stimuli.
+        </p>
+        <pre>
+        <code>
+        for each neuron in network:
+            for each input stimulus:
+                simulate GLIF neuron response
+                analyze spike patterns and firing rates
+        </code>
+        </pre>
+        <p>
+            This type of analysis helps in understanding the neural code and the principles of sensory information processing.
+        </p>
+
+        <h2>Conclusion</h2>
+        <p>
+            The Generalized Leaky Integrate-and-Fire (GLIF) model is a powerful tool for modeling neuronal dynamics. Its simplicity and computational efficiency make it ideal for simulating large networks of neurons and exploring complex brain functions. By leveraging the GLIF model, researchers can gain insights into the fundamental mechanisms of neural computation and sensory processing.
+        </p>
+    </div>
 </body>
 </html>
