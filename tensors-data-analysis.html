@@ -4,99 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exploring Tensors in Data Analysis</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2, h3 {
-            color: #0073e6;
-        }
-    </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Consolas, sans-serif;
+            margin: 20px;
+            padding: 0;
+            color: #333;
+            background: #f9f9f9;
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        p {
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Exploring Tensors in Data Analysis</h1>
-        <p>
-            Tensors are a fundamental concept in mathematics and have become increasingly important in the field of data analysis. In this blog post, we will explore what tensors are, their properties, and how they are used in various data analysis applications.
-        </p>
-        
-        <h2>What is a Tensor?</h2>
-        <p>
-            In simple terms, a tensor is a multi-dimensional array. While a scalar is a single number and a vector is a one-dimensional array, tensors can have multiple dimensions, making them a generalization of scalars, vectors, and matrices.
-        </p>
-        <pre>
-        <code>
-        Scalar: a = 5
-        Vector: v = [1, 2, 3]
-        Matrix: M = [[1, 2], [3, 4]]
-        Tensor: T = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
-        </code>
-        </pre>
+    <h1>Exploring Tensors in Data Analysis</h1>
 
-        <h3>Mathematical Representation of Tensors</h3>
-        <p>
-            Tensors can be represented mathematically with indices to denote their components. For example, a tensor \( \mathbf{T} \) of rank 3 can be represented as:
-        </p>
-        <pre>
-        <code>
-        \mathbf{T} = T_{ijk}
-        </code>
-        </pre>
-        <p>
-            Where \( i, j, k \) are the indices running over the dimensions of the tensor.
-        </p>
+    <p>Tensors are a fundamental concept in mathematics and have become increasingly important in the field of data analysis. In this blog post, we will explore what tensors are, their properties, and how they are used in various data analysis applications.</p>
 
-        <h2>Operations on Tensors</h2>
-        <p>
-            Similar to matrices, tensors support various operations such as addition, multiplication, and contraction. Tensor contraction generalizes matrix multiplication to higher dimensions.
-        </p>
-        <pre>
-        <code>
-        \text{Tensor Contraction:} \quad C_{ij} = \sum_k A_{ik} B_{kj}
-        </code>
-        </pre>
-        
-        <h2>Applications of Tensors in Data Analysis</h2>
-        <p>
-            Tensors are widely used in data analysis, particularly in fields like machine learning, computer vision, and natural language processing. Here are some key applications:
-        </p>
-        <ul>
-            <li><strong>Tensor Decomposition:</strong> Decomposing tensors into simpler components helps in uncovering hidden patterns in data. Popular methods include CP decomposition and Tucker decomposition.</li>
-            <li><strong>Neural Networks:</strong> Tensors are the backbone of data representation in neural networks. They are used to store inputs, outputs, weights, and activations in deep learning models.</li>
-            <li><strong>Image Processing:</strong> Images are represented as tensors (3D arrays) in computer vision tasks, with dimensions corresponding to height, width, and color channels.</li>
-        </ul>
+    <h2>What is a Tensor?</h2>
+    <p>In simple terms, a tensor is a multi-dimensional array. While a scalar is a single number and a vector is a one-dimensional array, tensors can have multiple dimensions, making them a generalization of scalars, vectors, and matrices.</p>
 
-        <h3>Example: Tensor Decomposition</h3>
-        <p>
-            Tensor decomposition is a powerful tool for analyzing multi-dimensional data. One common technique is CANDECOMP/PARAFAC (CP) decomposition, which expresses a tensor as a sum of component rank-one tensors.
-        </p>
-        <pre>
-        <code>
-        \mathbf{T} \approx \sum_{r=1}^{R} \mathbf{a}_r \circ \mathbf{b}_r \circ \mathbf{c}_r
-        </code>
-        </pre>
-        <p>
-            Here, \( \mathbf{a}_r, \mathbf{b}_r, \mathbf{c}_r \) are vectors, and \( \circ \) denotes the outer product.
-        </p>
+    <pre><code>
+    Scalar: a = 5
+    Vector: v = [1, 2, 3]
+    Matrix: M = [[1, 2], [3, 4]]
+    Tensor: T = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
+    </code></pre>
 
-        <h2>Conclusion</h2>
-        <p>
-            Tensors are a versatile and powerful tool in data analysis. They extend the capabilities of matrices to higher dimensions, enabling complex data representation and manipulation. Understanding tensors and their operations is crucial for advancing in modern data science and machine learning fields.
-        </p>
-    </div>
+    <h2>Mathematical Representation of Tensors</h2>
+    <p>Tensors can be represented mathematically with indices to denote their components. For example, a tensor \( \mathbf{T} \) of rank 3 can be represented as:</p>
+    <p>\[ \mathbf{T} = T_{ijk} \]</p>
+    <p>Where \( i, j, k \) are the indices running over the dimensions of the tensor.</p>
+
+    <h2>Operations on Tensors</h2>
+    <p>Similar to matrices, tensors support various operations such as addition, multiplication, and contraction. Tensor contraction generalizes matrix multiplication to higher dimensions.</p>
+    <p>\[ \text{Tensor Contraction:} \quad C_{ij} = \sum_k A_{ik} B_{kj} \]</p>
+
+    <h2>Applications of Tensors in Data Analysis</h2>
+    <p>Tensors are widely used in data analysis, particularly in fields like machine learning, computer vision, and natural language processing. Here are some key applications:</p>
+    <ul>
+        <li><strong>Tensor Decomposition:</strong> Decomposing tensors into simpler components helps in uncovering hidden patterns in data. Popular methods include CP decomposition and Tucker decomposition.</li>
+        <li><strong>Neural Networks:</strong> Tensors are the backbone of data representation in neural networks. They are used to store inputs, outputs, weights, and activations in deep learning models.</li>
+        <li><strong>Image Processing:</strong> Images are represented as tensors (3D arrays) in computer vision tasks, with dimensions corresponding to height, width, and color channels.</li>
+    </ul>
+
+    <h2>Example: Tensor Decomposition</h2>
+    <p>Tensor decomposition is a powerful tool for analyzing multi-dimensional data. One common technique is CANDECOMP/PARAFAC (CP) decomposition, which expresses a tensor as a sum of component rank-one tensors.</p>
+    <p>\[ \mathbf{T} \approx \sum_{r=1}^{R} \mathbf{a}_r \circ \mathbf{b}_r \circ \mathbf{c}_r \]</p>
+    <p>Here, \( \mathbf{a}_r, \mathbf{b}_r, \mathbf{c}_r \) are vectors, and \( \circ \) denotes the outer product.</p>
+
+    <h2>Conclusion</h2>
+    <p>Tensors are a versatile and powerful tool in data analysis. They extend the capabilities of matrices to higher dimensions, enabling complex data representation and manipulation. Understanding tensors and their operations is crucial for advancing in modern data science and machine learning fields.</p>
 </body>
 </html>
