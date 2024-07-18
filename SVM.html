@@ -13,8 +13,42 @@
             padding: 0;
             color: #333;
             background: #f9f9f9;
+            transition: background 0.5s, color 0.5s;
+        }
+        body.dark-mode {
+            background: #333;
+            color: #f9f9f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+        }
+        .dark-mode header {
+            background-color: #555;
+        }
+        .toggle-mode {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 24px;
+            color: white;
+        }
+        .dark-mode .toggle-mode {
+            color: white;
         }
         h1, h2 {
+            color: #4CAF50;
+        }
+        .dark-mode h1, .dark-mode h2 {
             color: #4CAF50;
         }
         p {
@@ -23,6 +57,10 @@
     </style>
 </head>
 <body>
+    <header>
+        Understanding Support Vector Machines
+        <button class="toggle-mode" onclick="toggleMode()">🌞</button>
+    </header>
     <h1>Understanding Support Vector Machines: A Deep Dive into SVMs</h1>
 
     <p>Support Vector Machines (SVM) are a cornerstone of machine learning, providing a powerful tool for data classification. Despite their apparent complexity, the principles behind SVM can be understood with a solid grasp of the underlying mathematics. In this blog post, we'll explore the key concepts of SVM, including how they work and their application in solving real-world problems.</p>
@@ -81,5 +119,17 @@
         <li><a href="https://onlinelibrary.wiley.com/doi/pdf/10.1155/2021/5594899">Support Vector Machine Applications in Financial Distress Prediction: A Review</a></li>
         <li><a href="https://link.springer.com/content/pdf/10.1007/978-1-4302-5990-9_3.pdf">SVMs for Classification</a></li>
     </ul>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+            var modeButton = document.querySelector('.toggle-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                modeButton.textContent = '🌞';
+            } else {
+                modeButton.textContent = '🌚';
+            }
+        }
+    </script>
 </body>
 </html>

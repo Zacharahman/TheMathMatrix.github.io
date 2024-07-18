@@ -13,8 +13,42 @@
             padding: 0;
             color: #333;
             background: #f9f9f9;
+            transition: background 0.5s, color 0.5s;
+        }
+        body.dark-mode {
+            background: #333;
+            color: #f9f9f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+        }
+        .dark-mode header {
+            background-color: #555;
+        }
+        .toggle-mode {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 24px;
+            color: white;
+        }
+        .dark-mode .toggle-mode {
+            color: white;
         }
         h1, h2 {
+            color: #4CAF50;
+        }
+        .dark-mode h1, .dark-mode h2 {
             color: #4CAF50;
         }
         p {
@@ -23,6 +57,10 @@
     </style>
 </head>
 <body>
+    <header>
+        Computational Neuroscience: GLIF Model
+        <button class="toggle-mode" onclick="toggleMode()">🌚</button>
+    </header>
     <h1>Computational Neuroscience: Generalized Leaky Integrate-and-Fire (GLIF) Model</h1>
 
     <p>The Generalized Leaky Integrate-and-Fire (GLIF) model is a fundamental tool in computational neuroscience, used to simulate the electrical activity of neurons. The GLIF model simplifies the complex dynamics of neuronal membranes, allowing researchers to study the behavior of large neuronal networks efficiently.</p>
@@ -72,9 +110,21 @@
     <h2>Further Reading and Resources</h2>
     <p>My Motivation and Current Workings:</p>
     <ul>
-        <li><a href="https://www.pnas.org/doi/full/10.1073/pnas.0804303105">Event Tree Analysis: Neuronal Network Dyanmics</a></li>
-        <li><a href="https://pubmed.ncbi.nlm.nih.gov/21597895/">Corse Grained ETA Hodgkin-Huxley Dynamics</a></li>
+        <li><a href="https://www.pnas.org/doi/full/10.1073/pnas.0804303105">Event Tree Analysis: Neuronal Network Dynamics</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/21597895/">Coarse Grained ETA Hodgkin-Huxley Dynamics</a></li>
         <li><a href="https://www.nature.com/articles/s41467-017-02717-4.pdf">Generalized Leaky Integrate-and-Fire Models (GLIF)</a></li>
     </ul>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+            var modeButton = document.querySelector('.toggle-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                modeButton.textContent = '🌞';
+            } else {
+                modeButton.textContent = '🌚';
+            }
+        }
+    </script>
 </body>
 </html>

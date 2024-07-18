@@ -13,8 +13,42 @@
             padding: 0;
             color: #333;
             background: #f9f9f9;
+            transition: background 0.5s, color 0.5s;
+        }
+        body.dark-mode {
+            background: #333;
+            color: #f9f9f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+        }
+        .dark-mode header {
+            background-color: #555;
+        }
+        .toggle-mode {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 24px;
+            color: white;
+        }
+        .dark-mode .toggle-mode {
+            color: white;
         }
         h1, h2 {
+            color: #4CAF50;
+        }
+        .dark-mode h1, .dark-mode h2 {
             color: #4CAF50;
         }
         p {
@@ -23,6 +57,10 @@
     </style>
 </head>
 <body>
+    <header>
+        Exploring Tensors in Data Analysis
+        <button class="toggle-mode" onclick="toggleMode()">🌞</button>
+    </header>
     <h1>Exploring Tensors in Data Analysis</h1>
 
     <p>Tensors are a fundamental concept in mathematics and have become increasingly important in the field of data analysis. In this blog post, we will explore what tensors are, their properties, and how they are used in various data analysis applications.</p>
@@ -68,5 +106,17 @@
         <li><a href="https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.776499?casa_token=B6mLVpxZWxwAAAAA:2AQGUt7GHQ2bKiuh1pbKFjKYDK6aEvaNdva0-gEMFbObRBWmTosNLj2seRdzKwLKtm1eXZb3OkpCyw">Tensor Regression: Neuroimaging Application</a></li>
         <li><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8408516&casa_token=6cscud7BJhMAAAAA:d4OvgYR6JajFwGQ0XT419qjVQ2oydmDAh_4m2dWjhLdBUSS2ag8QqNNuVtsBhFkqMwj8BzuHwqo&tag=1">Tensor Based Classification Models</a></li>
     </ul>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+            var modeButton = document.querySelector('.toggle-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                modeButton.textContent = '🌞';
+            } else {
+                modeButton.textContent = '🌚';
+            }
+        }
+    </script>
 </body>
 </html>

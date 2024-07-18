@@ -13,8 +13,42 @@
             padding: 0;
             color: #333;
             background: #f9f9f9;
+            transition: background 0.5s, color 0.5s;
+        }
+        body.dark-mode {
+            background: #333;
+            color: #f9f9f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+        }
+        .dark-mode header {
+            background-color: #555;
+        }
+        .toggle-mode {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 24px;
+            color: white;
+        }
+        .dark-mode .toggle-mode {
+            color: white;
         }
         h1, h2 {
+            color: #4CAF50;
+        }
+        .dark-mode h1, .dark-mode h2 {
             color: #4CAF50;
         }
         p {
@@ -23,6 +57,10 @@
     </style>
 </head>
 <body>
+    <header>
+        Nonlinear Optimization in Mathematics
+        <button class="toggle-mode" onclick="toggleMode()">🌞</button>
+    </header>
     <h1>Nonlinear Optimization in Mathematics</h1>
 
     <p>Nonlinear optimization is a critical area in mathematics, dealing with the process of finding the best solution from a set of feasible solutions. Unlike linear optimization, nonlinear optimization involves objective functions or constraints that are nonlinear, making the problem more complex and challenging. In this blog post, we will delve into the key concepts of nonlinear optimization, its mathematical foundations, and its applications.</p>
@@ -82,5 +120,17 @@
         <li><a href="https://link.springer.com/content/pdf/10.1007/s10479-007-0172-6.pdf">Complexity and algorithms for nonlinear optimization problems</a></li>
         <li><a href="https://www.cambridge.org/core/journals/acta-numerica/article/abs/mixedinteger-nonlinear-optimization/2D0CE8CDA53363A31ADE8689565517BD">Mixed Integer nonlinear optimization</a></li>
     </ul>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+            var modeButton = document.querySelector('.toggle-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                modeButton.textContent = '🌞';
+            } else {
+                modeButton.textContent = '🌚';
+            }
+        }
+    </script>
 </body>
 </html>
