@@ -46,6 +46,48 @@
         .dark-mode .toggle-mode {
             color: white;
         }
+        .burger-menu {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 24px;
+            color: white;
+        }
+        .dark-mode .burger-menu {
+            color: white;
+        }
+        .burger-menu div {
+            width: 30px;
+            height: 4px;
+            background-color: currentColor;
+            margin: 5px 0;
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 20px;
+            background-color: #eebf27;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+        }
+        .dark-mode .menu {
+            background-color: #555;
+        }
         .social-icons {
             display: flex;
             justify-content: center;
@@ -167,6 +209,18 @@
 <body>
     <header>
         The Math Matrix
+        <button class="burger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <div class="menu" id="menu">
+            <a href="index.html">Home</a>
+            <a href="computational-neuroscience.html">Computational Neuroscience</a>
+            <a href="tensors-data-analysis.html">Tensors in Data Analysis</a>
+            <a href="SVM.html">Support Vector Machines</a>
+            <a href="OM.html">Nonlinear Optimization</a>
+        </div>
         <div class="social-icons">
             <a href="https://twitter.com/Zacharahmans">
                 <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" /></svg>
@@ -224,6 +278,15 @@
                 modeButton.textContent = '🌞';
             } else {
                 modeButton.textContent = '🌚';
+            }
+        }
+
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
             }
         }
     </script>

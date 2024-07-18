@@ -45,6 +45,48 @@
         .dark-mode .toggle-mode {
             color: white;
         }
+        .burger-menu {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 24px;
+            color: white;
+        }
+        .dark-mode .burger-menu {
+            color: white;
+        }
+        .burger-menu div {
+            width: 30px;
+            height: 4px;
+            background-color: currentColor;
+            margin: 5px 0;
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 20px;
+            background-color: #4CAF50;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+        }
+        .dark-mode .menu {
+            background-color: #555;
+        }
         h1, h2 {
             color: #4CAF50;
         }
@@ -59,7 +101,19 @@
 <body>
     <header>
         Computational Neuroscience: GLIF Model
-        <button class="toggle-mode" onclick="toggleMode()">🌚</button>
+        <button class="burger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <div class="menu" id="menu">
+            <a href="index.html">Home</a>
+            <a href="computational-neuroscience.html">Computational Neuroscience</a>
+            <a href="tensors-data-analysis.html">Tensors in Data Analysis</a>
+            <a href="SVM.html">Support Vector Machines</a>
+            <a href="OM.html">Nonlinear Optimization</a>
+        </div>
+        <button class="toggle-mode" onclick="toggleMode()">🌞</button>
     </header>
     <h1>Computational Neuroscience: Generalized Leaky Integrate-and-Fire (GLIF) Model</h1>
 
@@ -123,6 +177,15 @@
                 modeButton.textContent = '🌞';
             } else {
                 modeButton.textContent = '🌚';
+            }
+        }
+
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
             }
         }
     </script>
