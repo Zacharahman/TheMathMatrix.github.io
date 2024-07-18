@@ -14,6 +14,11 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            transition: background 0.5s, color 0.5s;
+        }
+        body.dark-mode {
+            background: #333;
+            color: #f9f9f9;
         }
         header {
             background-color: #eebf27;
@@ -22,6 +27,24 @@
             text-align: center;
             font-size: 24px;
             font-weight: bold;
+            position: relative;
+        }
+        .dark-mode header {
+            background-color: #555;
+        }
+        .toggle-mode {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 24px;
+            color: white;
+        }
+        .dark-mode .toggle-mode {
+            color: white;
         }
         .social-icons {
             display: flex;
@@ -32,14 +55,17 @@
         .social-icons a {
             background: #eebf27;
             padding: 6px;
-            font:semibold;
-            text:white;
-            inline:flex;
-            items:center;
-            space-x:2;
+            font: semibold;
+            text: white;
+            inline: flex;
+            items: center;
+            space-x: 2;
             border-radius: 50%;
             color: white;
             text-decoration: none;
+        }
+        .dark-mode .social-icons a {
+            background: #555;
         }
         .social-icons svg {
             width: 20px;
@@ -68,6 +94,10 @@
             flex-direction: column;
             justify-content: center; /* Center text vertically */
         }
+        .dark-mode .card {
+            background: #444;
+            color: #f9f9f9;
+        }
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
@@ -87,6 +117,9 @@
             margin-top: 20px;
             font-size: 22px;
             padding: 0 20px;
+        }
+        .dark-mode .excerpt {
+            color: #f9f9f9;
         }
         .arrowed-list-container {
             text-align: center;
@@ -111,12 +144,18 @@
             left: 0;
             color: #333;
         }
+        .dark-mode .arrowed-list li:before {
+            color: #f9f9f9;
+        }
         footer {
             background-color: #eebf27;
             color: white;
             padding: 15px;
             text-align: center;
             font-size: 18px;
+        }
+        .dark-mode footer {
+            background-color: #555;
         }
         @media (max-width: 800px) {
             .card {
@@ -139,24 +178,21 @@
                 <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" className="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" fill="currentColor"/></g></svg>
             </a>
         </div>
+        <button class="toggle-mode" onclick="toggleMode()">🌞</button>
     </header>
     <div class="container">
-        
         <a href="computational-neuroscience.html" class="card">
             <h3>Computational Neuroscience</h3>
             <p>Current Works</p>
         </a>
-       
         <a href="tensors-data-analysis.html" class="card">
             <h3>Tensors in Data Analysis</h3>
             <p>The Nth Dimension</p>
         </a>
-     
         <a href="SVM.html" class="card">
             <h3>Support Vector Machines</h3>
             <p>ML Algorithm</p>
         </a>
-
         <a href="OM.html" class="card">
             <h3>Nonlinear Optimization</h3>
             <p>New Interest</p>
@@ -164,11 +200,11 @@
     </div>
     <div class="excerpt">
         Blog exploring the complexities of math with clear explanations and engaging discussions coupled with topics I like!
-        <p style="text-align: left;"></p>Questions and/or ideas: <span style="font-style: italic;">Zacharahman365@gmail.com</span></p>
+        <p>Feel free to reach out to me! <span style="font-style: italic;">Zacharahman365@gmail.com</span></p>
+        <p style="text-align: center;">Research areas:</p>
     </div>
-    <div class="arrowed-list-container">  
+    <div class="arrowed-list-container">
         <ul class="arrowed-list">
-            <p style="text-align: left;">Research areas:</p>
             <li>Applied Mathematics</li>
             <li>Dynamic Systems</li>
             <li>Machine Learning</li>
@@ -179,5 +215,17 @@
     <footer>
         &copy; 2024 The Math Matrix | Zach Abdulrahman
     </footer>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+            var modeButton = document.querySelector('.toggle-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                modeButton.textContent = '🌙';
+            } else {
+                modeButton.textContent = '🌞';
+            }
+        }
+    </script>
 </body>
 </html>
