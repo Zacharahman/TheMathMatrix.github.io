@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exploring Tensors in Data Analysis</title>
+    <title>Computational Models in Understanding EMT</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
@@ -75,12 +75,8 @@
             padding: 10px;
             border-radius: 5px;
         }
-        a:not(.menu a) {
-    color: #4CAF50; /* Change non-menu links to green */
-}
-
         .menu a {
-            color: white;
+            color: white; /* Keep burger menu links white */
             text-decoration: none;
             display: block;
             margin: 5px 0;
@@ -91,8 +87,8 @@
         .dark-mode .menu {
             background-color: #555;
         }
-        h1, h2 {
-            color: #4CAF50;
+        h1, h2, a:not(.menu a) {
+            color: #4CAF50; /* Change non-menu links to green */
         }
         .dark-mode h1, .dark-mode h2 {
             color: #4CAF50;
@@ -100,11 +96,21 @@
         p {
             margin: 20px 0;
         }
+        .pdf-preview-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .pdf-preview {
+            width: 80%;
+            height: 500px;
+            border: 1px solid #ccc;
+        }
     </style>
 </head>
 <body>
     <header>
-        Exploring Tensors in Data Analysis
+        Understanding Epithelial-Mesenchymal Transition
         <button class="burger-menu" onclick="toggleMenu()">
             <div></div>
             <div></div>
@@ -120,50 +126,36 @@
         </div>
         <button class="toggle-mode" onclick="toggleMode()">🌞</button>
     </header>
-    <h1>Exploring Tensors in Data Analysis</h1>
+    <h1>Computational Insights into Epithelial-Mesenchymal Transition (EMT)</h1>
+    <p>Epithelial-Mesenchymal Transition (EMT) is a fundamental process in developmental biology, cancer progression, and wound healing. This blog post explores how computational models, specifically Ordinary Differential Equations (ODE) and cellular vertex models, help us understand the complex dynamics of EMT.</p>
 
-    <p>Tensors are a fundamental concept in mathematics and have become increasingly important in the field of data analysis. In this blog post, we will explore what tensors are, their properties, and how they are used in various data analysis applications.</p>
+    <h2>ODE Model for YAP Signaling in EMT</h2>
+    <p>The first paper we discuss presents a multiscale simulation model that integrates YAP signaling pathways into cell behavior during EMT. YAP, or Yes-associated protein, is a key transcriptional regulator involved in cell growth and apoptosis. The model uses ODEs to simulate intracellular dynamics and embeds these into a larger tissue-scale model to study changes during EMT.</p>
+    <p>\[ \text{ODE Model:} \quad \frac{d[YAP]}{dt} = \alpha \cdot \text{Activation} - \beta \cdot \text{Degradation} \]</p>
 
-    <h2>What is a Tensor?</h2>
-    <p>In simple terms, a tensor is a multi-dimensional array. While a scalar is a single number and a vector is a one-dimensional array, tensors can have multiple dimensions, making them a generalization of scalars, vectors, and matrices.</p>
+    <h2>Cellular Vertex Model of Growing Epithelial Tissues</h2>
+    <p>The second paper introduces a dynamic cellular vertex model to study the morphomechanics of growing epithelial tissues influenced by EMT. This model considers individual cells as vertices in a dynamic network, simulating how mechanical stresses and cellular interactions drive morphological changes.</p>
+    <p>\[ \text{Vertex Model:} \quad \text{Minimize} \; U = \sum \left( \text{Elastic Energy} + \text{Interaction Energy} \right) \]</p>
 
-    <pre><code>
-    Scalar: a = 5
-    Vector: v = [1, 2, 3]
-    Matrix: M = [[1, 2], [3, 4]]
-    Tensor: T = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
-    </code></pre>
+    <h2>Applications and Implications</h2>
+    <p>These computational models provide insights into the critical roles of biochemical signals and mechanical forces in EMT. Applications range from understanding cancer metastasis to improving wound healing therapies and designing better anti-cancer drugs.</p>
 
-    <h2>Mathematical Representation of Tensors</h2>
-    <p>Tensors can be represented mathematically with indices to denote their components. For example, a tensor \( \mathbf{T} \) of rank 3 can be represented as:</p>
-    <p>\[ \mathbf{T} = T_{ijk} \]</p>
-    <p>Where \( i, j, k \) are the indices running over the dimensions of the tensor.</p>
-
-    <h2>Operations on Tensors</h2>
-    <p>Similar to matrices, tensors support various operations such as addition, multiplication, and contraction. Tensor contraction generalizes matrix multiplication to higher dimensions.</p>
-    <p>\[ \text{Tensor Contraction:} \quad C_{ij} = \sum_k A_{ik} B_{kj} \]</p>
-
-    <h2>Applications of Tensors in Data Analysis</h2>
-    <p>Tensors are widely used in data analysis, particularly in fields like machine learning, computer vision, and natural language processing. Here are some key applications:</p>
-    <ul>
-        <li><strong>Tensor Decomposition:</strong> Decomposing tensors into simpler components helps in uncovering hidden patterns in data. Popular methods include CP decomposition and Tucker decomposition.</li>
-        <li><strong>Neural Networks:</strong> Tensors are the backbone of data representation in neural networks. They are used to store inputs, outputs, weights, and activations in deep learning models.</li>
-        <li><strong>Image Processing:</strong> Images are represented as tensors (3D arrays) in computer vision tasks, with dimensions corresponding to height, width, and color channels.</li>
-    </ul>
-
-    <h2>Example: Tensor Decomposition</h2>
-    <p>Tensor decomposition is a powerful tool for analyzing multi-dimensional data. One common technique is CANDECOMP/PARAFAC (CP) decomposition, which expresses a tensor as a sum of component rank-one tensors.</p>
-    <p>\[ \mathbf{T} \approx \sum_{r=1}^{R} \mathbf{a}_r \circ \mathbf{b}_r \circ \mathbf{c}_r \]</p>
-    <p>Here, \( \mathbf{a}_r, \mathbf{b}_r, \mathbf{c}_r \) are vectors, and \( \circ \) denotes the outer product.</p>
-
+    <h2>Interactive Visualization</h2>
+    <video width="640" height="480" controls>
+        <source src="C2vsA2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <p>Video: Effect of cell-cell E-cadherin-dependent adhesion (here A2 = 12) and Rac1-dependent cell speed (here C2 = 4).</p>
+    <p>Morpheus is a great open source software that contains simulation results visualizing cell behavior during EMT under various conditions, highlighting the impact of YAP signaling and cellular stress responses.</p>
+    <a href="https://morpheus.gitlab.io/model/m7123/">Morpheus Model/ MDCK EMT C</a>
     <h2>Conclusion</h2>
-    <p>Tensors are a versatile and powerful tool in data analysis. They extend the capabilities of matrices to higher dimensions, enabling complex data representation and manipulation. Understanding tensors and their operations is crucial for advancing in modern data science and machine learning fields.</p>
+    <p>The integration of ODE and vertex models in computational biology allows for a deeper understanding of complex biological processes like EMT. By simulating the interplay between molecular pathways and physical forces, researchers can uncover new insights into cellular dynamics and potential therapeutic targets.</p>
+
     <h2>Further Reading and Resources</h2>
-    <p>Here are some recommended papers and resources:</p>
     <ul>
-        <li><a href="https://dl.acm.org/doi/pdf/10.1145/2915921">ACM's Tensors for Data Mining and Fusion</a></li>
-        <li><a href="https://www.tandfonline.com/doi/pdf/10.1080/01621459.2013.776499?casa_token=B6mLVpxZWxwAAAAA:2AQGUt7GHQ2bKiuh1pbKFjKYDK6aEvaNdva0-gEMFbObRBWmTosNLj2seRdzKwLKtm1eXZb3OkpCyw">Tensor Regression: Neuroimaging Application</a></li>
-        <li><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8408516&casa_token=6cscud7BJhMAAAAA:d4OvgYR6JajFwGQ0XT419qjVQ2oydmDAh_4m2dWjhLdBUSS2ag8QqNNuVtsBhFkqMwj8BzuHwqo&tag=1">Tensor Based Classification Models</a></li>
+        <li><a href="https://www.nature.com/articles/s41598-022-13925-4">Deep Learning Models of Cell Migration</a></li>
+        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7953130/">Mechanotransduction in Cellular Vertex Models</a></li>
+        <li><a href="https://www.cell.com/biophysj/fulltext/S0006-3495(22)00284-3?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0006349522002843%3Fshowall%3Dtrue">Multiscale computational model of YAP signaling</a></li>
     </ul>
 
     <script>
