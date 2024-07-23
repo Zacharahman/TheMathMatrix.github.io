@@ -76,9 +76,8 @@
             border-radius: 5px;
         }
         a:not(.menu a) {
-    color: #4CAF50; /* Change non-menu links to green */
-}
-
+            color: #4CAF50;
+        }
         .menu a {
             color: white;
             text-decoration: none;
@@ -156,8 +155,51 @@
     <p>\[ \mathbf{T} \approx \sum_{r=1}^{R} \mathbf{a}_r \circ \mathbf{b}_r \circ \mathbf{c}_r \]</p>
     <p>Here, \( \mathbf{a}_r, \mathbf{b}_r, \mathbf{c}_r \) are vectors, and \( \circ \) denotes the outer product.</p>
 
+    <h2>Example: Collaborative Filtering in Recommender Systems</h2>
+    <p>Collaborative filtering is a technique used by recommender systems to predict user preferences for items. This method relies on user-item interaction data, which can be represented as a sparse matrix. When extending collaborative filtering to handle more complex data, tensors can be used.</p>
+    
+    <h3>How It Works:</h3>
+    <p>In traditional collaborative filtering, you might have a user-item matrix where each entry represents the rating a user gives to an item. However, real-world data often involves more dimensions, such as time, context, or additional metadata about users and items. This is where tensors come into play. By representing the data as a higher-order tensor, we can incorporate these additional dimensions to capture more nuanced relationships.</p>
+    
+    <h3>Example:</h3>
+    <p>Consider a recommender system that not only uses user and item information but also includes time and context (like location or device type). The data can be represented as a 4D tensor \( \mathbf{T} \), where:</p>
+    <p>\( T_{ijkl} \) might represent the interaction between user \( i \), item \( j \), at time \( k \), and in context \( l \).</p>
+    
+    <h3>Tensor Factorization for Recommender Systems:</h3>
+    <p>Tensor factorization techniques, such as Higher-Order Singular Value Decomposition (HOSVD) or Tucker decomposition, can be used to decompose this interaction tensor into lower-dimensional factors. These factors help in predicting missing values in the tensor, i.e., predicting user preferences under different conditions.</p>
+    
+    <p><strong>Benefits:</strong></p>
+    <ul>
+        <li>Incorporating Additional Dimensions: Tensors allow for the inclusion of more information beyond simple user-item interactions, potentially improving recommendation accuracy.</li>
+        <li>Handling Sparse Data: Tensor factorization techniques can deal with sparsity more effectively by leveraging latent factors.</li>
+        <li>Better Contextual Recommendations: By including context and time, recommendations can be made more relevant to the user’s current situation.</li>
+    </ul>
+
+    <h2>Example: Natural Language Processing (NLP) with Tensors</h2>
+    <p>In Natural Language Processing (NLP), tensors are used to convert words and sentences into numerical representations that can be fed into machine learning models.</p>
+    
+    <h3>How It Works:</h3>
+    <p>Text data is often represented as high-dimensional tensors. For instance, in a typical word embedding approach, words are represented as vectors in a continuous vector space. These vectors are then used to form sentences or documents, which can be treated as tensors with multiple dimensions representing words, sentences, and documents.</p>
+    
+    <h3>Example:</h3>
+    <p>Consider a document classification task where we want to classify documents into different categories. The text data can be represented as a 3D tensor \( \mathbf{T} \), where:</p>
+    <p>The first dimension represents the document index.</p>
+    <p>The second dimension represents the sentence index within a document.</p>
+    <p>The third dimension represents the word embeddings of each word in a sentence.</p>
+    
+    <h3>Tensor Factorization for Text Data:</h3>
+    <p>Tensor factorization techniques can be used to reduce the dimensionality of text data, uncover latent semantic structures, and improve the performance of NLP models. For example, techniques like Tensor-Train Decomposition (TTD) can be used to compress large NLP models, making them more efficient.</p>
+    
+    <p><strong>Benefits:</strong></p>
+    <ul>
+        <li>Semantic Analysis: Tensors can capture the semantic relationships between words, sentences, and documents, allowing for more accurate text classification and sentiment analysis.</li>
+        <li>Handling Large Vocabulary: Tensors enable the handling of large vocabularies by embedding words into high-dimensional spaces.</li>
+        <li>Efficient Model Compression: Tensor factorization techniques can reduce the size of NLP models, making them faster and more memory-efficient.</li>
+    </ul>
+
     <h2>Conclusion</h2>
     <p>Tensors are a versatile and powerful tool in data analysis. They extend the capabilities of matrices to higher dimensions, enabling complex data representation and manipulation. Understanding tensors and their operations is crucial for advancing in modern data science and machine learning fields.</p>
+    
     <h2>Further Reading and Resources</h2>
     <p>Here are some recommended papers and resources:</p>
     <ul>

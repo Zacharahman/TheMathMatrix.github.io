@@ -82,8 +82,8 @@
             margin: 5px 0;
         }
         a:not(.menu a) {
-    color: #4CAF50; /* Change non-menu links to green */
-}
+            color: #4CAF50; /* Change non-menu links to green */
+        }
 
         .menu a:hover {
             text-decoration: underline;
@@ -99,6 +99,17 @@
         }
         p {
             margin: 20px 0;
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        .caption {
+            text-align: center;
+            font-size: 14px;
+            color: #555;
         }
     </style>
 </head>
@@ -160,6 +171,23 @@
     <p>Gradient descent is a simple yet powerful optimization technique. The idea is to iteratively move towards the minimum of the objective function by taking steps proportional to the negative gradient:</p>
     <p>\[ x_{k+1} = x_k - \alpha \nabla f(x_k) \]</p>
     <p>where \( \alpha \) is the learning rate and \( \nabla f(x_k) \) is the gradient of the objective function at \( x_k \).</p>
+
+    <h2>Example: Training a Neural Network</h2>
+    <p>Training a neural network involves finding the optimal set of weights that minimize the loss function. This is a nonlinear optimization problem because the loss function is typically nonlinear with respect to the weights. The objective is to minimize the loss function \( L(w) \) with respect to the weights \( w \):</p>
+    <p>\[ \min_{w} L(w) \]</p>
+    
+    <h3>How It Works:</h3>
+    <p>During training, optimization algorithms like gradient descent are used to update the weights iteratively. The gradients of the loss function with respect to the weights are computed, and the weights are adjusted in the direction that reduces the loss:</p>
+    <p>\[ w_{k+1} = w_k - \alpha \nabla L(w_k) \]</p>
+    <p>Here, \( \alpha \) is the learning rate, and \( \nabla L(w_k) \) is the gradient of the loss function at the current set of weights \( w_k \).</p>
+    
+    <h3>Example:</h3>
+    <p>Consider a simple neural network with a single hidden layer. The weights between the input layer and the hidden layer are represented as \( W_1 \), and the weights between the hidden layer and the output layer are represented as \( W_2 \). The loss function could be the mean squared error (MSE) between the predicted output and the actual output:</p>
+    <p>\[ L(W_1, W_2) = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \]</p>
+    <p>where \( y_i \) is the actual output, \( \hat{y}_i \) is the predicted output, and \( n \) is the number of samples. The goal is to minimize \( L(W_1, W_2) \) by adjusting \( W_1 \) and \( W_2 \) using gradient descent.</p>
+    
+    <img src="NL.png" alt="MINLP approach" class="center">
+    <p class="caption">The MINLP approach</p>
 
     <h2>Applications of Nonlinear Optimization</h2>
     <p>Nonlinear optimization has a wide range of applications in various fields, including:</p>
