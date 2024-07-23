@@ -99,6 +99,12 @@
         p {
             margin: 20px 0;
         }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
     </style>
 </head>
 <body>
@@ -154,6 +160,8 @@
     <p>Tensor decomposition is a powerful tool for analyzing multi-dimensional data. One common technique is CANDECOMP/PARAFAC (CP) decomposition, which expresses a tensor as a sum of component rank-one tensors.</p>
     <p>\[ \mathbf{T} \approx \sum_{r=1}^{R} \mathbf{a}_r \circ \mathbf{b}_r \circ \mathbf{c}_r \]</p>
     <p>Here, \( \mathbf{a}_r, \mathbf{b}_r, \mathbf{c}_r \) are vectors, and \( \circ \) denotes the outer product.</p>
+    
+    <img src="T.png" alt="MINLP approach" class="center">
 
     <h2>Example: Collaborative Filtering in Recommender Systems</h2>
     <p>Collaborative filtering is a technique used by recommender systems to predict user preferences for items. This method relies on user-item interaction data, which can be represented as a sparse matrix. When extending collaborative filtering to handle more complex data, tensors can be used.</p>
